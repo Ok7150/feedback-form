@@ -22,7 +22,7 @@ function App() {
       return;
     }
 
-    fetch('https://testing-module-7-default-rtdb.asia-southeast1.firebasedatabase.app/feedback.json',
+    fetch('https://feedback-form-c10f8-default-rtdb.asia-southeast1.firebasedatabase.app/',
          {
           method: 'POST',
           headers: {
@@ -46,7 +46,7 @@ function App() {
   // get messages from server
   useEffect(() => {
     if(getMessages) {
-      fetch('https://testing-module-7-default-rtdb.asia-southeast1.firebasedatabase.app/feedback.json')
+      fetch('https://feedback-form-c10f8-default-rtdb.asia-southeast1.firebasedatabase.app/')
       .then(res => res.json())
       .then(data => {
         console.log(data)
@@ -68,8 +68,8 @@ function App() {
   return (
     <div className='app-container'>
       <div className='form-container'>
-        <h2>Feedback Form</h2>
-        <TextField
+        <div className='form-heading'><h2>Feedback Form</h2></div>
+        <TextField 
           required
           id="outlined-required"
           label="Full Name"
@@ -80,14 +80,14 @@ function App() {
         <TextField
           id="outlined-textarea"
           label="Feedback"
-          placeholder="Placeholder"
+          placeholder="Enter your feedback"
           rows={4}
           multiline
           value={userMessage}
           onChange={(e) => setUserMessage(e.target.value)}
         />
 
-      <Button variant="contained"
+      <Button  variant='contained'
         onClick={handleSubmitFeedback}
       >Contained</Button>
       </div>
