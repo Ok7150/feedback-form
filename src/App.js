@@ -22,17 +22,18 @@ function App() {
       return;
     }
 
-    fetch('https://feedback-form-c10f8-default-rtdb.asia-southeast1.firebasedatabase.app/',
-         {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-              userName: userName,
-              userMessage: userMessage,
-          })
-        }
+    fetch('https://feedback-form-c10f8-default-rtdb.asia-southeast1.firebasedatabase.app/feedback.json',
+      {
+        method: 'POST',
+        // headers are extra detail give outside the wrap things of the req
+         headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            userName: userName,
+            userMessage: userMessage,
+        })
+      }
     )
     .then(res => res.json())
     .then(data => {
@@ -46,7 +47,7 @@ function App() {
   // get messages from server
   useEffect(() => {
     if(getMessages) {
-      fetch('https://feedback-form-c10f8-default-rtdb.asia-southeast1.firebasedatabase.app/')
+      fetch('https://feedback-form-c10f8-default-rtdb.asia-southeast1.firebasedatabase.app/feedback.json')
       .then(res => res.json())
       .then(data => {
         console.log(data)
@@ -97,8 +98,7 @@ function App() {
           messageList && messageList.map((item, index) => {
             return (
               <div className='feedback-item' key={index}>
-                <h3>{item.userName}</h3>
-                <p>{item.userMessage}</p>
+                <span>{item.userName}</span> || <span>{item.userMessage}</span>               
               </div>
             )
           })

@@ -11,3 +11,20 @@
   padding-top: 35px;
   font-size: 25px;
 }
+
+.feedback-container{
+  padding-top: 15px;
+  font-size: 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 300px;
+  border: 1px solid black;
+  padding: 30px;
+  margin: 30px;
+  margin-left: 505px;
+  border-radius: 5px;
+  
+}
