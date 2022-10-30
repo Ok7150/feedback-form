@@ -1,15 +1,17 @@
 .form-container{
+  margin-top: 30px;
+  padding-top: 10px;
+  font-size: 25px;
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 15px;
-}
-
-
-.form-heading{
-  padding-top: 35px;
-  font-size: 25px;
+  width: 300px;
+  border: 1px solid black;
+  padding: 30px;
+  margin-left: 505px;
+  border-radius: 5px;
 }
 
 .feedback-container{

@@ -69,7 +69,7 @@ function App() {
   return (
     <div className='app-container'>
       <div className='form-container'>
-        <div className='form-heading'><h2>Feedback Form</h2></div>
+        <h2>Feedback Form</h2>
         <TextField 
           required
           id="outlined-required"
@@ -90,7 +90,7 @@ function App() {
 
       <Button  variant='contained'
         onClick={handleSubmitFeedback}
-      >Contained</Button>
+      >Submit Feedback</Button>
       </div>
 
       <div className='feedback-container'>
@@ -98,7 +98,7 @@ function App() {
           messageList && messageList.map((item, index) => {
             return (
               <div className='feedback-item' key={index}>
-                <span>{item.userName}</span> || <span>{item.userMessage}</span>               
+                <span><b>{item.userName}</b></span>  :  <span>{item.userMessage}</span>               
               </div>
             )
           })
